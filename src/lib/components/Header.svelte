@@ -8,7 +8,7 @@
 </script>
 
 <AppBar slotTrail="place-content-end">
-    <h1 class="text-2xl">メール生成</h1>
+    <h1 class="text-2xl">フォームとメールを作る</h1>
     <svelte:fragment slot="trail">
         <LightSwitch />
         <select class="select w-fit" bind:value={$ThemeStore} on:change={onChange}>
