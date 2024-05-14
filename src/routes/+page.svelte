@@ -1,15 +1,17 @@
 <script lang="ts">
     import { TabGroup, Tab } from '@skeletonlabs/skeleton';
 
-    import FormHtml from '$lib/FormHtml.svelte'
-    import MailToUser from '$lib/MailToUser.svelte'
-    import MailToAdmin from '$lib/MailToAdmin.svelte'
+    import FormHtml from '$lib/components/output/FormHtml.svelte'
+    import MailToUser from '$lib/components/output/MailToUser.svelte'
+    import MailToAdmin from '$lib/components/output/MailToAdmin.svelte'
 
     let tabSet: number = 0;
 </script>
 
 
-<section>
+<section class="p-4">
+    <h2 class="text-2xl mb-4">アウトプット</h2>
+    <hr class="!border-t-4" />
     <TabGroup>
         <Tab bind:group={tabSet} name="tab1" value={0}>
             <span>フォームHTML</span>

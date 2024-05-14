@@ -4,6 +4,7 @@
 
     import Header from '$lib/components/Header.svelte'
     import Sidebar from '$lib/components/Sidebar.svelte'
+    import Footer from '$lib/components/Footer.svelte'
 
 </script>
 
@@ -18,8 +19,8 @@
         <Sidebar/>
     </svelte:fragment>
 
-    <svelte:fragment slot="pageFooter">
-    Footer
+    <svelte:fragment slot="footer">
+        <Footer/>
     </svelte:fragment>
 
 </AppShell>
