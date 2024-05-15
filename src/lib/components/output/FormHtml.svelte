@@ -1,13 +1,9 @@
 <script lang="ts">
-    import {FormStore} from '$lib/stores/Form'
+    import { FormStore } from '$lib/stores/Form'
 
-    let html:any
+    import SnippetBlock from '$lib/components/SnippetBlock.svelte'
 
-    function copyToClipboard(el:any) {
-        navigator.clipboard.writeText(html.innerText)
-    }
-
-    $: form_html = `
+    $: snippet = `
 <form action="">
     <div>
         <label for="name">${$FormStore.fixedItems.name}</label>
@@ -17,14 +13,23 @@
         <label for="email">${$FormStore.fixedItems.email}</label>
         <input type="email" id="email" required />
     </div>
+    <div>
+        <label for="${$FormStore.unfixedItems[0].id}">${$FormStore.unfixedItems[0].label}</label>
+        <input type="${$FormStore.unfixedItems[0].type}" id="${$FormStore.unfixedItems[0].id}" ${$FormStore.unfixedItems[0].required ? "required" : ""}/>
+    </div>
+    <div>
+        <label for="${$FormStore.unfixedItems[1].id}">${$FormStore.unfixedItems[1].label}</label>
+        <textarea id="${$FormStore.unfixedItems[1].id}" ${$FormStore.unfixedItems[1].required ? "required" : ""}></textarea>
+    </div>
     <button>送信</button>
 </form>
     `
 
 </script>
 
-<h3 class="mb-4">フォームHTML</h3>
-<button on:click={copyToClipboard}>COPY</button>
-<pre class="card card-hover p-4 cursor-pointer overflow-x-scroll">
-    <code bind:this={html}>{form_html}</code>
-</pre>
+<section class="p-4">
+    <h3 class="mb-4">フォームHTML</h3>
+    <div>
+        <SnippetBlock snippet={snippet} language="html"></SnippetBlock>
+    </div>
+</section>

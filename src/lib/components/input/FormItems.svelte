@@ -25,6 +25,7 @@
                     </select>
                 </td>
                 <td>
+                    <input type="checkbox" class="checkbox cursor-not-allowed !bg-gray-300 !filter-none" checked disabled/>
                 </td>
             </tr>
             <tr>
@@ -40,12 +41,13 @@
                     </select>
                 </td>
                 <td>
+                    <input type="checkbox" class="checkbox cursor-not-allowed !bg-gray-300 !filter-none" checked disabled/>
                 </td>
             </tr>
             {#each $FormStore.unfixedItems as item, index}
                 <tr>
                     <td>
-                        <input type="text" class="input" value={item.id} />
+                        <input type="text" class="input" bind:value={item.id} />
                     </td>
                     <td>
                         <input type="text" class="input" bind:value={item.label} />
