@@ -28,7 +28,7 @@
 </script>
 
 <section class="p-4">
-    <h3 class="mb-4">フォームHTML</h3>
+    <h3 class="text-xl mb-4">フォームHTML</h3>
     <div>
         <SnippetBlock snippet={snippet} language="html"></SnippetBlock>
     </div>

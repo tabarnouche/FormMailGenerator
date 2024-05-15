@@ -5,41 +5,34 @@
 
     import SnippetBlock from '$lib/components/SnippetBlock.svelte'
 
-    $: senderName = $InformationStore.siteName !== ''
-        ? $InformationStore.siteName
-        : $InformationStore.companyName
-
     $: replyLimit = $InformationStore.replyLimitValue + $InformationStore.replyLimitUnit
 
-
     $: snippet = `
-[USER_NAME] 様
+[name] 様
 
-${senderName}へお問い合わせいただき、誠にありがとうございます。
+${$InformationStore.siteName} へお問い合わせいただき、誠にありがとうございます。
 
 以下の内容でお問い合わせを受付いたしました。
 
 ———————————————————————
+${$FormStore.fixedItems.name}: [name]
+${$FormStore.fixedItems.email}: [email]
+${$FormStore.unfixedItems.map(item => `${item.label}: [${item.id}]`).join('\n')}
 ———————————————————————
 
 内容を確認次第、担当者よりご連絡いたしますので、今しばらくお待ちください。
 
-${replyLimit}以内にご連絡がない場合は、お手数ですがこのメールに返信する形でお問い合わせください。
+${replyLimit} 以内にご連絡がない場合は、お手数ですがこのメールに返信する形でお問い合わせください。
 
 ---
+${$InformationStore.companyName}
+${$FooterStore.map(item => `${item.key}: ${item.value}`).join('\n')}
+メールアドレス: ${$InformationStore.emailAddress}
     `
 </script>
 
 <section class="p-4">
-    <h3 class="mb-4">ユーザー宛メール</h3>
-    <pre class="card card-hover p-4 cursor-pointer whitespace-pre-line">
-{$InformationStore.companyName}
-{#each $FooterStore as item}
-{@html ''}
-{item.key}: {item.value}
-{/each}
-メールアドレス: {$InformationStore.emailAddress}
-    </pre>
+    <h3 class="text-xl mb-4">ユーザー宛メール</h3>
     <div>
         <SnippetBlock snippet={snippet} language="plaintext" showLineNumbers={false}></SnippetBlock>
     </div>
