@@ -1,27 +1,12 @@
 <script>
     import { LightSwitch, AppBar } from '@skeletonlabs/skeleton'
-    import { ThemeStore } from '$lib/stores/Theme'
-
-    const onChange = () => {
-        document.body.setAttribute('data-theme', $ThemeStore)
-    }
+    import ThemeSwitch from '$lib/components/ThemeSwitch.svelte'
 </script>
 
 <AppBar slotTrail="place-content-end">
     <h1 class="text-2xl">フォームとメールを作る</h1>
     <svelte:fragment slot="trail">
         <LightSwitch />
-        <select class="select w-fit" bind:value={$ThemeStore} on:change={onChange}>
-            <option value="skeleton">Skeleton</option>
-            <option value="wintry">Wintry</option>
-            <option value="modern">Modern</option>
-            <option value="rocket">Rocket</option>
-            <option value="seafoam">Seafoam</option>
-            <option value="vintage">Vintage</option>
-            <option value="sahara">Sahara</option>
-            <option value="hamlindigo">Hamlindigo</option>
-            <option value="gold-nouveau">Gold Nouveau</option>
-            <option value="crimson">Crimson</option>
-        </select>
+        <ThemeSwitch />
     </svelte:fragment>
 </AppBar>
