@@ -21,6 +21,6 @@ ${$FormStore.unfixedItems.map(item => `${item.label}: [${item.id}]`).join('\n')}
 <section class="p-4">
     <h3 class="text-xl mb-4">管理者宛メール</h3>
     <div>
-        <SnippetBlock snippet={snippet} language="plaintext"></SnippetBlock>
+        <SnippetBlock snippet={snippet} language="plaintext" showLineNumbers={false}></SnippetBlock>
     </div>
 </section>

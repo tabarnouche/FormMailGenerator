@@ -16,4 +16,9 @@
     export let snippet:string, language:string = 'plaintext', showLineNumbers:boolean = true
 </script>
 
-<CodeBlock language={language} code={snippet} buttonCopied="😻" lineNumbers={showLineNumbers}></CodeBlock>
+<CodeBlock
+    language={language}
+    code={snippet}
+    buttonCopied={['✊🏻', '✌🏻', '🖐🏻'][Math.floor(Math.random()*3)]}
+    lineNumbers={showLineNumbers}
+></CodeBlock>
