@@ -11,7 +11,7 @@
 
 <AppBar slotTrail="place-content-end">
     <svelte:fragment slot="lead">
-        <button class="xl:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+        <button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
             <span>
                 <svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
                     <rect width="100" height="20" />
@@ -21,7 +21,7 @@
             </span>
         </button>
     </svelte:fragment>
-    <h1 class="hidden xl:block text-2xl">フォームとメールを作る</h1>
+    <h1 class="hidden lg:block text-2xl">フォームとメールを作る</h1>
     <svelte:fragment slot="trail">
         <LightSwitch />
         <ThemeSwitch />
