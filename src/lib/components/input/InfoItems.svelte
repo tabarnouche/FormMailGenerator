@@ -5,7 +5,7 @@
 <section class="my-4">
     <h3 class="text-xl my-4">基本情報</h3>
     <div class="m-4">
-        <fieldset class="grid grid-cols-2 gap-4">
+        <fieldset class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div class="">
                 <label class="label" for="companyName">会社・団体名</label>
                 <input type="text" autocomplete="off" id="companyName" class="input" bind:value={$InformationStore.companyName} />

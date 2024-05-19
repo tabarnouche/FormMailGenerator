@@ -4,7 +4,7 @@
     import Form from '$lib/components/input/FormItems.svelte'
 </script>
 
-<section class="p-4 max-w-xl">
+<section class="p-4">
     <h2 class="text-2xl mb-4">インプット</h2>
     <hr class="!border-t-4" />
     <div class="p-2">

@@ -1,14 +1,20 @@
 <script>
-    import { AppShell } from '@skeletonlabs/skeleton'
+    import { AppShell, initializeStores, Drawer } from '@skeletonlabs/skeleton'
     import "../app.css"
 
     import Header from '$lib/components/Header.svelte'
     import Sidebar from '$lib/components/Sidebar.svelte'
     import Footer from '$lib/components/Footer.svelte'
 
+    initializeStores();
+
 </script>
 
-<AppShell>
+<Drawer>
+    <Sidebar/>
+</Drawer>
+
+<AppShell slotSidebarLeft="hidden lg:block max-w-xl">
     <svelte:fragment slot="header">
         <Header/>
     </svelte:fragment>
