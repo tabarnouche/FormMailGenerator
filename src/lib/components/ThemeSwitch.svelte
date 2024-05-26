@@ -16,7 +16,7 @@
     }
 </script>
 
-<select class="select w-fit" bind:value={$ThemeStore} on:change={onChange}>
+<select class="select w-fit" bind:value={$ThemeStore} on:change={onChange} aria-label="テーマ">
     <option value="skeleton">Skeleton</option>
     <option value="wintry">Wintry</option>
     <option value="modern">Modern</option>

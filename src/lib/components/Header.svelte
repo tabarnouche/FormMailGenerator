@@ -11,7 +11,7 @@
 
 <AppBar slotTrail="place-content-end">
     <svelte:fragment slot="lead">
-        <button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+        <button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen} title="インプット">
             <span>
                 <svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
                     <rect width="100" height="20" />
